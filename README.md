@@ -12,7 +12,7 @@ Communication and collaboration are key. Use GitHub issues and pull requests to 
 > [!IMPORTANT]
 > Pleas read
 > collaboration guide [COLLABORATION.md](./COLLABORATION.md)
-> code of conduct [code_of_conduct.md](./code_of_conduct.md)
+> and code of conduct [CODE_OF_CONDUCT.md](./code_of_conduct.md)
 
 ### Getting Started 🏁
 To begin, clone the repository and take some time to explore the folders and familiarize yourself with the project structure. Make sure to read the detailed contribution guide in `COLLABORATION.md` to understand our workflows and expectations. Once you’re ready, pick a task or module that aligns with your skills and interests and start contributing. Remember to have fun while making an impact! ✨
