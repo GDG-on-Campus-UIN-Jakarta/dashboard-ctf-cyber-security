@@ -1,0 +1,55 @@
+name: 🟠 Installation Issue
+description: Laporkan masalah yang terjadi selama proses instalasi.
+title: "🟠 [Error] Masalah saat instalasi: <deskripsi singkat>"
+labels: []
+assignees:
+  - oskhar
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih telah melaporkan masalah instalasi. Silakan isi bagian di bawah ini agar kami dapat membantu Anda dengan lebih baik.
+
+  - type: textarea
+    id: installation-steps
+    attributes:
+      label: Langkah Instalasi
+      description: Jelaskan langkah-langkah yang sudah dilakukan sebelum masalah muncul.
+      placeholder: |
+        1. Clone repository.
+        2. Jalankan npm install.
+        3. Jalankan perintah konfigurasi.
+    validations:
+      required: true
+
+  - type: textarea
+    id: system-environment
+    attributes:
+      label: Lingkungan Sistem
+      description: Sebutkan sistem operasi, dependency, dan versi alat yang digunakan.
+      placeholder: |
+        OS -> Arch 6.11.9-arch1-1
+        NodeJS -> v16.3.0
+        NPM -> v7.15.1
+        Dependency -> express@4.17.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Log Error
+      description: Salin dan tempel pesan error yang muncul selama proses instalasi.
+      placeholder: ENOENT no such file or directory, open 'config.json..
+      render: shell
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Kode Etik
+      description: Dengan mengirimkan laporan ini, Anda setuju untuk mengikuti [Kode Etik](https://example.com) proyek ini.
+      options:
+        - label: Saya setuju untuk mengikuti Kode Etik proyek ini.
+          required: true

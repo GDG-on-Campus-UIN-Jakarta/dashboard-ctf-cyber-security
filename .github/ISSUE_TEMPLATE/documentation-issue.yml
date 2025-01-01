@@ -1,0 +1,47 @@
+name: 🔵 Documentation Issue
+description: Laporkan kesalahan atau usulan perbaikan pada dokumentasi.
+title: "🔵 [Docs] Kesalahan/Peningkatan pada dokumentasi: <deskripsi singkat>"
+labels: ["tipe:dokumentasi"]
+assignees:
+  - oskhar
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih telah memberikan masukan terkait dokumentasi. Silakan isi bagian di bawah ini untuk membantu kami memperbaiki dokumentasi dengan lebih baik.
+
+  - type: input
+    id: affected-section
+    attributes:
+      label: Bagian yang Terdampak
+      description: Sebutkan bagian dokumentasi yang terdampak, seperti judul atau URL.
+      placeholder: Bab "Instalasi" atau https://docs.example.com/installation
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-or-suggestion
+    attributes:
+      label: Masalah atau Usulan
+      description: Jelaskan masalah pada dokumentasi atau usulan perbaikannya.
+      placeholder: "Ada langkah instalasi yang tidak jelas di bagian 2."
+    validations:
+      required: true
+
+  - type: input
+    id: references
+    attributes:
+      label: Referensi
+      description: Tambahkan referensi eksternal jika relevan (opsional).
+      placeholder: https://example.com/tutorial
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Kode Etik
+      description: Dengan mengirimkan laporan ini, Anda setuju untuk mengikuti [Kode Etik](https://example.com) proyek ini.
+      options:
+        - label: Saya setuju untuk mengikuti Kode Etik proyek ini.
+          required: true

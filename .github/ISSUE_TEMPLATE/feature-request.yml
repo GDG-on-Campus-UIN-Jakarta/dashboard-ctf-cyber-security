@@ -1,0 +1,47 @@
+name: 🟢 Feature Request
+description: Ajukan permintaan fitur baru.
+title: "🟢 [Feature Request] Tambahkan fitur <nama fitur>: <deskripsi singkat|opsional>"
+labels: ["tipe:permintaan fitur"]
+assignees:
+  - oskhar
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih telah mengajukan permintaan fitur! Silakan isi semua bagian di bawah ini agar kami memahami kebutuhan Anda dengan lebih baik.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Deskripsi Fitur
+      description: Jelaskan fitur yang diinginkan dan mengapa fitur ini penting.
+      placeholder: Jelaskan fitur secara rinci dan alasan Anda memintanya.
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Manfaat
+      description: Jelaskan bagaimana fitur ini akan membantu pengguna atau meningkatkan pengalaman.
+      placeholder: Jelaskan manfaat yang akan diperoleh pengguna.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatif yang Dipertimbangkan
+      description: Sebutkan solusi lain yang telah Anda pertimbangkan dan mengapa mereka tidak dipilih.
+      placeholder: Jelaskan alternatif yang telah Anda pertimbangkan.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Kode Etik
+      description: Dengan mengirimkan permintaan ini, Anda setuju untuk mengikuti [Kode Etik](https://example.com) proyek ini.
+      options:
+        - label: Saya setuju untuk mengikuti Kode Etik proyek ini.
+          required: true

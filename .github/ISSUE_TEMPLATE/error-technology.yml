@@ -1,0 +1,62 @@
+name: 🟣 Tech Error Report
+description: Laporkan kesalahan pada teknologi spesifik.
+title: "🟣 [Error] Kesalahan pada <teknologi seperti Docker/Redis/Express>: <deskripsi singkat>"
+labels: []
+assignees:
+  - oskhar
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih telah melaporkan kesalahan ini. Harap isi semua bagian di bawah ini agar kami dapat membantu Anda dengan lebih baik.
+
+  - type: textarea
+    id: error-details
+    attributes:
+      label: Detail Error
+      description: Salin dan tempel teks atau kode error yang muncul.
+      placeholder: Connection refused on port 5432..
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Langkah Reproduksi
+      description: Jelaskan langkah-langkah untuk memunculkan error.
+      placeholder: |
+        1. Jalankan perintah npm start.
+        2. Sambungkan ke database.
+        3. Error muncul pada langkah ini.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Lingkungan
+      description: Sebutkan detail versi teknologi yang digunakan (Docker, Redis, Express, dll.) serta sistem operasi.
+      placeholder: |
+        Docker v20.10.7
+        Redis v6.2.1
+        Arch 6.11.9-arch1-1
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log Terkait
+      description: Salin dan tempel log yang relevan (jika ada). Log akan diformat secara otomatis.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Kode Etik
+      description: Dengan mengirimkan laporan ini, Anda setuju untuk mengikuti [Kode Etik](https://example.com) proyek ini.
+      options:
+        - label: Saya setuju untuk mengikuti Kode Etik proyek ini.
+          required: true
