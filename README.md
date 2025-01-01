@@ -10,7 +10,7 @@ The repository is divided into four main areas. The _Admin Dash_ and _User Dash_
 Communication and collaboration are key. Use GitHub issues and pull requests to share updates, report bugs, and suggest improvements. Constructive feedback is always appreciated. Additionally, it’s crucial to maintain a positive and inclusive environment, respecting the contributions of all team members. Together, we can build something exceptional.
 
 > [!IMPORTANT]
-> Pleas read
+> Please read
 > collaboration guide [COLLABORATION.md](./COLLABORATION.md)
 > and code of conduct [CODE_OF_CONDUCT.md](./code_of_conduct.md)
 
