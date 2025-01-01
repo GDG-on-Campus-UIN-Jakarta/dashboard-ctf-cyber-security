@@ -1,0 +1,572 @@
+openapi: "3.0.2"
+info:
+  title: Dashboard CTF Cyber Security
+  description: API endpoints for managing.
+  version: 1.0.0
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  responses:
+    OKResponse:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request was successful."
+              message:
+                type: string
+                description: "A message describing the result of the request."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: true
+                  message: "Success! Your request has safely landed back to Earth."
+                  meta:
+                    request_id: "string"
+    CreatedResponse:
+      description: CREATED
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request was successful."
+              message:
+                type: string
+                description: "A message describing the result of the request."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: true
+                  message: "Success! Your request has safely landed back to Earth."
+                  meta:
+                    request_id: "string"
+          example:
+            status: true
+            message: "New entity launched into the cosmos."
+            meta:
+              request_id: "string"
+    NoContentResponse:
+      description: NO_CONTENT
+    UnauthorizedResponse:
+      description: UNAUTHORIZED
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request failed."
+              message:
+                type: string
+                description: "A message describing the reason for failure."
+              errors:
+                type: array
+                items:
+                  type: string
+                description: "List of error details if available."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: false
+                  message: "Your credentials don't pass the cosmic gatekeeper!"
+                  errors:
+                    - "Invalid access token"
+                  meta:
+                    request_id: "string"
+    BadRequestResponse:
+      description: BAD REQUEST
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request failed."
+              message:
+                type: string
+                description: "A message describing the reason for failure."
+              errors:
+                type: array
+                items:
+                  type: string
+                description: "List of error details if available."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: false
+                  message: "Your credentials don't pass the cosmic gatekeeper!"
+                  errors:
+                    - "Invalid access token"
+                  meta:
+                    request_id: "string"
+          example:
+            status: false
+            message: "Your request veered off course and couldn't escape Earth's gravity!"
+            errors:
+              - "Missing required parameter"
+            meta:
+              request_id: "string"
+    ForbiddenResponse:
+      description: FORBIDDEN
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request failed."
+              message:
+                type: string
+                description: "A message describing the reason for failure."
+              errors:
+                type: array
+                items:
+                  type: string
+                description: "List of error details if available."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: false
+                  message: "Your credentials don't pass the cosmic gatekeeper!"
+                  errors:
+                    - "Invalid access token"
+                  meta:
+                    request_id: "string"
+          example:
+            status: false
+            message: "Your request violates the Sacred Timeline and cannot be fulfilled!"
+            errors:
+              - "Access to this resource is forbidden"
+            meta:
+              request_id: "string"
+    NotFoundResponse:
+      description: NOT FOUND
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request failed."
+              message:
+                type: string
+                description: "A message describing the reason for failure."
+              errors:
+                type: array
+                items:
+                  type: string
+                description: "List of error details if available."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: false
+                  message: "Your credentials don't pass the cosmic gatekeeper!"
+                  errors:
+                    - "Invalid access token"
+                  meta:
+                    request_id: "string"
+          example:
+            status: false
+            message: "The data you're seeking is beyond the bounds of space!"
+            errors:
+              - "Resource not found"
+            meta:
+              request_id: "string"
+    ConflictResponse:
+      description: CONFLICT
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request failed."
+              message:
+                type: string
+                description: "A message describing the reason for failure."
+              errors:
+                type: array
+                items:
+                  type: string
+                description: "List of error details if available."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: false
+                  message: "Your credentials don't pass the cosmic gatekeeper!"
+                  errors:
+                    - "Invalid access token"
+                  meta:
+                    request_id: "string"
+          example:
+            status: false
+            message: "Collision in the cosmic pathways! Your request encountered a space-time conflict."
+            errors:
+              - "Duplicate entity detected"
+            meta:
+              request_id: "string"
+    UnprocessableEntityResponse:
+      description: UNPROCESSABLE ENTITY
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: boolean
+                description: "Indicates if the request failed."
+              message:
+                type: string
+                description: "A message describing the reason for failure."
+              errors:
+                type: array
+                items:
+                  type: string
+                description: "List of error details if available."
+              meta:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: "Unique identifier for the request."
+                example:
+                  status: false
+                  message: "Your credentials don't pass the cosmic gatekeeper!"
+                  errors:
+                    - "Invalid access token"
+                  meta:
+                    request_id: "string"
+          example:
+            status: false
+            message: "Data anomaly detected. Unable to process your request in this dimension!"
+            errors:
+              - "Invalid data format"
+            meta:
+              request_id: "string"
+
+security:
+  - BearerAuth: []
+
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Development Server
+  - url: http://localhost:3000/api/v1
+    description: Docker Development Server
+
+tags:
+  - name: "Authentication: User Authorization"
+    description: For admin authentication
+
+paths:
+  /auth/login:
+    post:
+      tags:
+        - "Authentication: User Authorization"
+      summary: "Login as an admin or guest user."
+      description: "Authenticates an admin account or guest and returns an access token if credentials are valid."
+      requestBody:
+        description: "Credentials for login, including email or phone number, and password."
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: "Email address or phone number registered with the account."
+                password:
+                  type: string
+                  format: password
+                  description: "Account password."
+                remember_me:
+                  type: boolean
+                  description: "Option to keep the user logged in between sessions."
+            example:
+              email_or_phone_number: "admin@example.com"
+              password: "TesPassword123"
+              remember_me: false
+      responses:
+        200:
+          description: Successful response containing administrator details and an access token.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    description: Status keberhasilan dari permintaan.
+                    example: true
+                  message:
+                    type: string
+                    description: Pesan yang menjelaskan hasil dari permintaan.
+                    example: "Success! Your request has safely landed back to Earth."
+                  data:
+                    type: object
+                    description: Data utama yang berisi informasi administrator dan token akses.
+                    properties:
+                      admin:
+                        type: object
+                        description: Informasi lengkap tentang administrator.
+                        properties:
+                          id:
+                            type: integer
+                            description: ID unik.
+                            example: 1
+                          email:
+                            type: string
+                            description: Alamat email.
+                            format: email
+                            example: "admin@example.com"
+                          whatsapp:
+                            type: string
+                            description: Nomor telepon.
+                            example: "799.937.0629 x9742"
+                          language:
+                            type: string
+                            description: Bahasa yang digunakan oleh.
+                            example: "id"
+                          username:
+                            type: string
+                            description: Nama panggilan.
+                            example: "Alycia"
+                          institute:
+                            type: string
+                            description: Divisi tempat bekerja.
+                            example: "ADMINISTRATOR"
+                          created_at:
+                            type: string
+                            format: date-time
+                            description: Waktu pembuatan data.
+                            example: "2024-11-16T08:42:48.091Z"
+                      access_token:
+                        type: string
+                        description: Token akses dalam format JSON Web Token (JWT) yang dihasilkan setelah autentikasi berhasil.
+                        example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJjb21wYW55X2lkIjoxLCJpYXQiOjE3MzE3MjI5NDQsImV4cCI6MTczMTcyMzU0NH0.5Z8jXi90ycVDtt5f97c4s1jUBvqihIocs7eWFES8wAo"
+                  meta:
+                    type: object
+                    description: Metadata tambahan tentang permintaan.
+                    properties:
+                      request_id:
+                        type: string
+                        description: ID unik permintaan untuk pelacakan.
+                        example: "bd228049-7495-4580-bc91-5681fa1f3d13"
+        400:
+          $ref: "#/components/responses/BadRequestResponse"
+
+  /auth/refresh:
+    post:
+      tags:
+        - "Authentication: User Authorization"
+      summary: "Refresh access token for an authenticated admin user."
+      description: "Generates a new access token for the authenticated admin, maintaining their active session."
+      responses:
+        200:
+          description: "Access token refreshed successfully."
+          content:
+            application/json:
+              example:
+                status: true
+                message: "Successful."
+                data:
+                  access_token: "new-jwt-token-string"
+                meta:
+                  request_id: "unique-request-id-string"
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+
+  /auth/me:
+    post:
+      tags:
+        - "Authentication: User Authorization"
+      summary: "Retrieve the current authenticated admin's profile."
+      description: "Fetches the profile details of the currently authenticated admin user."
+      responses:
+        200:
+          description: Successful response containing administrator data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    description: Status keberhasilan dari permintaan.
+                    example: true
+                  message:
+                    type: string
+                    description: Pesan yang menjelaskan hasil dari permintaan.
+                    example: "Success! Your request has safely landed back to Earth."
+                  data:
+                    type: object
+                    description: Data utama yang berisi informasi administrator.
+                    properties:
+                      admin:
+                        type: object
+                        description: Informasi lengkap tentang administrator.
+                        properties:
+                          id:
+                            type: integer
+                            description: ID unik administrator.
+                            example: 1
+                          email:
+                            type: string
+                            description: Alamat email administrator.
+                            format: email
+                            example: "admin@example.com"
+                          phone_number:
+                            type: string
+                            description: Nomor telepon administrator.
+                            example: "799.937.0629 x9742"
+                          language:
+                            type: string
+                            description: Bahasa yang digunakan oleh administrator.
+                            example: "id"
+                          is_unable_working_time:
+                            type: boolean
+                            description: Status apakah administrator tidak dapat bekerja pada jam tertentu.
+                            example: false
+                          start_work:
+                            type: string
+                            format: time
+                            nullable: true
+                            description: Waktu mulai kerja administrator, jika ada.
+                            example: null
+                          finish_work:
+                            type: string
+                            format: time
+                            nullable: true
+                            description: Waktu selesai kerja administrator, jika ada.
+                            example: null
+                          nickname:
+                            type: string
+                            description: Nama panggilan administrator.
+                            example: "Alycia"
+                          division:
+                            type: string
+                            description: Divisi tempat administrator bekerja.
+                            example: "ADMINISTRATOR"
+                          created_at:
+                            type: string
+                            format: date-time
+                            description: Waktu pembuatan data administrator.
+                            example: "2024-11-16T08:42:48.091Z"
+                  meta:
+                    type: object
+                    description: Metadata tambahan untuk permintaan.
+                    properties:
+                      request_id:
+                        type: string
+                        description: ID unik permintaan untuk pelacakan.
+                        example: "8fa4c5d5-222c-4112-b9b1-a52eb3aef7a5"
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+
+  /auth/logout:
+    post:
+      tags:
+        - "Authentication: User Authorization"
+      summary: "Logout the authenticated admin."
+      description: "Terminates the active session of the currently authenticated admin."
+      responses:
+        204:
+          description: "Logout successful, no content returned."
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+
+  /auth/change-password:
+    post:
+      tags:
+        - "Authentication: User Authorization"
+      summary: "Change the password for the authenticated admin."
+      description: "Allows an admin to update their account password by providing the old and new passwords."
+      requestBody:
+        description: "Old and new passwords required for password change."
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                old_password:
+                  type: string
+                  format: password
+                  description: "Current password."
+                new_password:
+                  type: string
+                  format: password
+                  description: "New password with specified requirements."
+                confirm_password:
+                  type: string
+                  format: password
+                  description: "Confirmation of the new password."
+            example:
+              old_password: "TesPassword123"
+              new_password: "UbahPassword9"
+              confirm_password: "UbahPassword9"
+      responses:
+        200:
+          $ref: "#/components/responses/OKResponse"
+        400:
+          $ref: "#/components/responses/BadRequestResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+        422:
+          $ref: "#/components/responses/UnprocessableEntityResponse"

@@ -1,0 +1,92 @@
+name: 🔴 Bug Report
+description: Laporkan bug yang ditemukan.
+title: "🔴 [Bug] Masalah pada <fitur>: <deskripsi singkat>"
+labels: ["tipe:bug"]
+assignees:
+  - oskhar
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih telah melaporkan bug ini! Harap isi semua bagian berikut untuk membantu kami memperbaiki masalah dengan lebih efektif.
+
+  - type: input
+    id: contact
+    attributes:
+      label: Detail Kontak
+      description: Bagaimana kami dapat menghubungi Anda jika memerlukan informasi tambahan? (opsional)
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Deskripsi Bug
+      description: Berikan ringkasan singkat tentang bug yang Anda temukan.
+      placeholder: Jelaskan bug secara singkat.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Langkah Reproduksi
+      description: Jelaskan langkah-langkah untuk memunculkan bug.
+      placeholder: Langkah-langkah rinci untuk memunculkan bug.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Hasil yang Diharapkan
+      description: Apa yang Anda harapkan terjadi?
+      placeholder: Jelaskan hasil yang diharapkan.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-result
+    attributes:
+      label: Hasil Aktual
+      description: Apa yang sebenarnya terjadi?
+      placeholder: Jelaskan hasil aktual.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Lingkungan
+      description: Sebutkan detail lingkungan Anda, termasuk versi perangkat lunak, sistem operasi, browser, dan perangkat yang digunakan.
+      placeholder: Versi perangkat lunak, OS, browser, dll.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log Relevan
+      description: Tempelkan log yang relevan di sini. Log akan diformat otomatis sebagai kode.
+      render: shell
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: Versi Perangkat Lunak
+      description: Pilih versi perangkat lunak yang Anda gunakan.
+      options:
+        - 1.0.0 (Stable)
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Kode Etik
+      description: Dengan mengirimkan masalah ini, Anda setuju untuk mengikuti [Kode Etik](https://example.com) proyek ini.
+      options:
+        - label: Saya setuju untuk mengikuti Kode Etik proyek ini.
+          required: true
